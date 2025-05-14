@@ -1,6 +1,6 @@
-import { UserModule } from "src/modules/user/user.module";
 import { DataSource } from "typeorm";
 import "dotenv/config";
+import { UserEntity } from "src/modules/user/application/entities/user.entity";
 
 export const databaseProviders = [
     {
@@ -15,7 +15,7 @@ export const databaseProviders = [
                 database: process.env.DATABASE,
                 schema: process.env.DATABASE_SCHEMA,
                 entities: [
-                    UserModule,
+                    UserEntity,
                 ],
                 synchronize: true,
             });
