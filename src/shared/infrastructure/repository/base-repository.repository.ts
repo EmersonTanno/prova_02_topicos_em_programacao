@@ -1,5 +1,5 @@
 import { Repository } from "src/shared/application/interfaces/repository.interface";
-import { DataSource, DeepPartial, DeleteResult, EntityManager, EntityTarget, FindManyOptions, UpdateResult } from "typeorm";
+import { DataSource, DeepPartial, DeleteResult, EntityManager, EntityTarget, FindManyOptions, FindOneOptions, UpdateResult } from "typeorm";
 
 export class BaseRepository<T> implements Repository<T> {
     constructor(
@@ -25,9 +25,14 @@ export class BaseRepository<T> implements Repository<T> {
         return await repository.findOneBy({ id: id } as any);
     }
 
-    async find(findOptions: FindManyOptions, manager?: EntityManager): Promise<T[]> {
+    async find(findOptions: FindManyOptions<T>, manager?: EntityManager): Promise<T[]> {
         const repository = manager ? manager.getRepository(this.entity) : this.datasource.getRepository(this.entity);
         return await repository.find(findOptions);
+    }
+
+    async findOne(options: FindOneOptions<T>, manager?: EntityManager): Promise<T | null> {
+        const repository = manager ? manager.getRepository(this.entity) : this.datasource.getRepository(this.entity);
+        return await repository.findOne(options);
     }
 
     async update(id: string, data: DeepPartial<T>, manager?: EntityManager): Promise<UpdateResult> {

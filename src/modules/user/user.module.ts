@@ -3,6 +3,7 @@ import { DatabaseModule } from "../database/database.module";
 import { UserController } from "./presentation/controllers/user.controller";
 import { CreateUserUserCase } from "./application/use-cases/create-user.use-case";
 import { UserRepository } from "./infrastructure/repositories/user.repository";
+import { HashPasswordUseCase } from "./application/use-cases/hash-password.use-case";
 
 @Module({
     imports: [
@@ -15,7 +16,8 @@ import { UserRepository } from "./infrastructure/repositories/user.repository";
     controllers: [UserController],
     providers: [
         UserRepository,
-        CreateUserUserCase
+        CreateUserUserCase,
+        HashPasswordUseCase,
     ]
 })
 export class UserModule { }
