@@ -3,6 +3,8 @@ import { SignInUseCase } from "./application/use-case/sign-in.use-case";
 import { UserRepository } from "../user/infrastructure/repositories/user.repository";
 import { AuthController } from "./presentation/controllers/auth.controller";
 import { UserModule } from "../user/user.module";
+import { APP_GUARD } from "@nestjs/core";
+import { AuthGuard } from "./application/guards/auth.guard";
 
 @Module({
     imports: [
@@ -13,7 +15,7 @@ import { UserModule } from "../user/user.module";
     ],
     exports: [],
     providers: [
-        SignInUseCase
+        SignInUseCase,
     ]
 })
 export class AuthModule { }

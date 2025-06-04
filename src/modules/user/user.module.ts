@@ -4,6 +4,7 @@ import { UserController } from "./presentation/controllers/user.controller";
 import { CreateUserUserCase } from "./application/use-cases/create-user.use-case";
 import { UserRepository } from "./infrastructure/repositories/user.repository";
 import { HashPasswordUseCase } from "./application/use-cases/hash-password.use-case";
+import { UserService } from "./application/services/user.service";
 
 @Module({
     imports: [
@@ -11,13 +12,15 @@ import { HashPasswordUseCase } from "./application/use-cases/hash-password.use-c
     ],
     exports: [
         UserRepository,
-        CreateUserUserCase
+        UserService,
+        CreateUserUserCase,
     ],
     controllers: [UserController],
     providers: [
         UserRepository,
         CreateUserUserCase,
         HashPasswordUseCase,
+        UserService,
     ]
 })
 export class UserModule { }
