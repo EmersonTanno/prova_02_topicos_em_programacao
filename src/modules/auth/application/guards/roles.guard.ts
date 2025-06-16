@@ -9,7 +9,8 @@ import { DataSource } from 'typeorm';
 @Injectable()
 export class RolesGuard implements CanActivate {
     constructor(
-        private reflector: Reflector
+        private reflector: Reflector,
+        private userService: UserService
     ) {
     }
 
@@ -21,7 +22,11 @@ export class RolesGuard implements CanActivate {
         if (!requiredRoles) {
             return true;
         }
+
         const { user } = context.switchToHttp().getRequest();
-        return requiredRoles.some((role) => user.role == role);
+
+        console.log("user do role")
+        console.log(user)
+        return requiredRoles.includes(user.role);
     }
 }

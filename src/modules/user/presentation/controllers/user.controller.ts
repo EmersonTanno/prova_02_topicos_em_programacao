@@ -17,6 +17,7 @@ export class UserController {
 
     @Role(Roles.ADMIN)
     @Post("create")
+    @UseGuards(RolesGuard)
     public async createUser(@Body() createUser: CreateUserDto, @Res() response: Response) {
         const result = await this.createUserUseCase.execute(createUser);
         return response.status(result.status).send(result.data);
@@ -25,7 +26,7 @@ export class UserController {
     @Public()
     @Post('adm_gen')
     public async admGen(@Res() response: Response) {
-        const result = await this.createUserUseCase.execute({ email: 'kaik@gmail.com', name: 'kaik', password: '123', roles: Roles.ADMIN })
+        const result = await this.createUserUseCase.execute({ email: 'kaik@gmail.com', name: 'kaik', password: '123', role: Roles.ADMIN })
         return response.status(result.status).send(result.data)
     }
 }
