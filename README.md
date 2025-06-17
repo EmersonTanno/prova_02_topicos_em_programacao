@@ -28,7 +28,7 @@ http://localhost:3000/auth/signin
     "password": "123"
 }
 `
-* Essa rota faz o login do usuário admin que vou criado
+* Essa rota faz o login do usuário admin que foi criado
 
 http://localhost:3000/users/create
 `POST`
