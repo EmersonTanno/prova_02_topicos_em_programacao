@@ -37,7 +37,7 @@ http://localhost:3000/users/create
     "name": "Kaik Santos",
     "email": "kaik@gmail.com",
     "password": "kaik123456",
-    "roles": "user"
+    "role": "user"
 }
 `
 * Essa rota cria um usuário. Somente um usuário com role de admin consegue criar usuários
