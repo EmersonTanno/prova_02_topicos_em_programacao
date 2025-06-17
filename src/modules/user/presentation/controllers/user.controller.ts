@@ -26,7 +26,7 @@ export class UserController {
     @Public()
     @Post('adm_gen')
     public async admGen(@Res() response: Response) {
-        const result = await this.createUserUseCase.execute({ email: 'kaik@gmail.com', name: 'kaik', password: '123', role: Roles.ADMIN })
+        const result = await this.createUserUseCase.execute({ email: 'admin@gmail.com', name: 'admin', password: '123', role: Roles.ADMIN })
         return response.status(result.status).send(result.data)
     }
 }
