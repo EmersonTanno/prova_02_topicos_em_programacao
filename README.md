@@ -48,14 +48,14 @@ http://localhost:3000/auth/signin
 
 http://localhost:3000/users/create
 `POST`
-`
+``` json
 {
     "name": "Kaik Santos",
     "email": "kaik@gmail.com",
     "password": "kaik123456",
     "role": "user"
 }
-`
+```
 * Essa rota cria um usuário. Somente um usuário com role de admin consegue criar usuários
 
 
@@ -71,13 +71,13 @@ http://localhost:3000/users/get
 
 http://localhost:3000/users/update/:id
 `PUT`
-`
+``` json
 {
     "name": "Kaik Santos",
     "email": "kaik@gmail.com",
     "password": "kaik123456",
 }
-`
+```
 * Essa rota atualiza um usuário. Somente um usuário com role de admin consegue atualizar qualquer usuários
 
 http://localhost:3000/users/delete/:id
