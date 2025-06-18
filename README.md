@@ -1,16 +1,30 @@
-# Trabalho 2 bimestre
-Neste trabalho, foi desenvolviedo uma api em Nestjs que possui as seguinte funcionalidades:
 
-1. Criação de usuários
-2. Utilização de permissões (roles) para cada usuário
-3. Autenticação com JWT para as requisições
-4. Encriptação de senha por meio do algoritmo de hash bcrypt
-5. Criação de um usuário administrador
-6. Criação de usuários comuns
+
+# Prova 2 bimestre
+Nesta prova, foi desenvolviedo uma api em Nestjs
+
+# Alunos
+Pedro Afonso Cordeiro Sena
+22013787-2
+
+Renan Tonon de Oliveira
+22188153-2
+
+Emerson Tanno Brizotto
+22048194-2
+
+Kaik Dorvalo dos Santos
+22093919-2
+
+Willian Hideaki Kakihata
+22015763-2
+
+Lucas Niguti dos Santos
+22019975-2
 
 # Como rodar o trabalho
 
-1. Intale o postgresql
+1. Suba o container com `docker-compose up -d`
 2. clone o repositório e instale as depêndencias com `npm install`
 3. Coloque os dados de acesso do postgresql no .env da raíz do projeto
 4. Crie manualmente o database `topicos` (as tabelas serão carregas ao niciar o projeto)
@@ -45,3 +59,28 @@ http://localhost:3000/users/create
 * Essa rota cria um usuário. Somente um usuário com role de admin consegue criar usuários
 
 
+http://localhost:3000/users/get/:id
+`GET`
+
+* Essa rota busca um usuário. Somente um usuário com role de admin consegue acessar todos os usuários.
+
+http://localhost:3000/users/get
+`GET`
+
+* Essa rota busca todos usuário. Somente um usuário com role de admin consegue acessar todos os usuários.
+
+http://localhost:3000/users/update/:id
+`PUT`
+`
+{
+    "name": "Kaik Santos",
+    "email": "kaik@gmail.com",
+    "password": "kaik123456",
+}
+`
+* Essa rota atualiza um usuário. Somente um usuário com role de admin consegue atualizar qualquer usuários
+
+http://localhost:3000/users/delete/:id
+`DELETE`
+
+* Essa rota deleta um usuário. Somente um usuário com role de admin consegue deletar um usuários.
