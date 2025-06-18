@@ -22,11 +22,9 @@ Lucas Niguti dos Santos
 
 # Como rodar o trabalho
 
-1. Suba o container com `docker-compose up -d`
-2. clone o repositório e instale as depêndencias com `npm install`
-3. Coloque os dados de acesso do postgresql no .env da raíz do projeto
-4. Crie manualmente o database `topicos` (as tabelas serão carregas ao niciar o projeto)
-5. inicie o servidor com `npm run start:dev`
+1. Clone o repositório e instale as depêndencias com `npm install`
+2. Suba o container com `docker-compose up -d`
+3. inicie o servidor com `npm run start:dev`
 
 # Rotas
 
