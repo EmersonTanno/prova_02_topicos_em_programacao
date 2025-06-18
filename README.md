@@ -1,5 +1,5 @@
 # Prova 2 bimestre
-Nesta prova, foi desenvolviedo uma api em Nestjs
+Esta prova, foi desenvolvido uma api em Nestjs
 
 # Alunos
 Pedro Afonso Cordeiro Sena
