@@ -1,5 +1,3 @@
-
-
 # Prova 2 bimestre
 Nesta prova, foi desenvolviedo uma api em Nestjs
 
@@ -30,7 +28,7 @@ Lucas Niguti dos Santos
 4. Crie manualmente o database `topicos` (as tabelas serão carregas ao niciar o projeto)
 5. inicie o servidor com `npm run start:dev`
 
-#Rotas
+# Rotas
 
 http://localhost:3000/users/adm_gen
 `POST`
